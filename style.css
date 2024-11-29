@@ -1,0 +1,259 @@
+/* General Styling */
+body {
+    background: linear-gradient(135deg, #d0e7f9, #f2f8f6); /* Soft gradient background */
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Header Styling */
+header {
+    background: rgba(131, 197, 190, 0.9); /* Semi-transparent background */
+    color: #fff;
+    padding: 2rem 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+header .logo {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+
+header input[type="text"] {
+    padding: 0.5rem 1rem;
+    margin-top: 1rem;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    width: 60%;
+}
+
+header nav a {
+    color: #fff;
+    margin: 0 1rem;
+    text-decoration: none;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+header nav a:hover {
+    color: #56c1a0;
+}
+
+/* Main Content Section */
+main {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    flex: 1;
+}
+
+/* Interactive Body Map Section */
+#body-map {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#body-map h1 {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+}
+
+/* Fun Facts Section */
+#fun-facts {
+    width: 80%;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #333;
+}
+
+.facts-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.fact-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.fact-card h3 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.fact-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Hover effect for cards */
+.fact-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+}
+
+/* Button Styling */
+.btn-test-knowledge {
+    display: inline-block;
+    background-color: #56c1a0;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-test-knowledge:hover {
+    background-color: #4a9d87;
+}
+
+.body-container {
+    position: relative;
+    display: inline-block;
+}
+
+.body-map {
+    width: 80%; /* Adjust the width based on your image's size */
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Hotspot Styling */
+.hotspot {
+    position: absolute;
+    font-weight: 600;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hotspot:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Positioning the hotspots */
+.skin { top: 30%; left: 10%; }
+.mouth { top: 40%; left: 50%; }
+.gut { top: 70%; left: 20%; }
+
+/* Quick Stats Section */
+#quick-stats {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+#quick-stats h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.stat-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 10px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.stat-item h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+.stat-item p {
+    margin-top: 1rem;
+    font-size: 1.2rem;
+    color: #666;
+}
+
+/* Footer Section */
+footer {
+    background: rgba(240, 247, 252, 0.9); /* Semi-transparent background */
+    padding: 1rem 0;
+    color: #333;
+    font-size: 1rem;
+    text-align: center;
+    border-top: 2px solid #ccc;
+    margin-top: auto;
+}
+
+footer p {
+    margin: 0;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    header input[type="text"] {
+        width: 80%;
+    }
+
+    .stats {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .stat-item {
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .body-map {
+        width: 100%;
+    }
+
+    .fact-card {
+        padding: 1.5rem;
+    }
+
+    .section-title {
+        font-size: 2rem;
+    }
+
+    .facts-container {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .fact-card {
+        width: 90%;
+        margin: 0 auto;
+    }
+}

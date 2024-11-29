@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Microbiome Explorer - Quiz</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <div class="logo">Microbiome Explorer</div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="fun-facts.html">Fun Facts</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="about.html">About</a>
+        </nav>
+    </header>
+
+    <!-- Main Content Section -->
+    <main>
+        <section id="quiz">
+            <h1>Test Your Microbiome Knowledge!</h1>
+            <form id="quiz-form">
+                <div class="quiz-question">
+                    <label for="question1">How many bacteria are in the human body?</label>
+                    <select id="question1">
+                        <option value="1">1 billion</option>
+                        <option value="2">39 trillion</option>
+                        <option value="3">100 trillion</option>
+                    </select>
+                </div>
+                <div class="quiz-question">
+                    <label for="question2">Which part of the body hosts the most bacteria?</label>
+                    <select id="question2">
+                        <option value="1">Mouth</option>
+                        <option value="2">Skin</option>
+                        <option value="3">Gut</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Submit</button>
+            </form>
+            <div id="quiz-result"></div>
+            <a href="index.html" class="btn-back">Back to the Map</a>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Microbiome Explorer. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
