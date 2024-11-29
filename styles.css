@@ -1,0 +1,41 @@
+/* General Styling */
+body {
+    font-family: Arial, sans-serif;
+}
+
+/* Header Customizations */
+.logo {
+    font-size: 1.5rem;
+}
+
+/* Body Map Section */
+.body-container {
+    position: relative;
+}
+
+.body-map {
+    max-width: 350px;
+}
+
+.hotspot {
+    position: absolute;
+    padding: 5px;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 50%;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.hotspot:hover {
+    background-color: rgba(255, 255, 255, 1);
+}
+
+/* Quick Stats Customizations */
+.card h3 {
+    font-size: 2rem;
+}
+
+.card p {
+    font-size: 1.1rem;
+}
