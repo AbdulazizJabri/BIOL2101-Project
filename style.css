@@ -66,7 +66,23 @@ main {
 #body-map h1 {
     font-size: 2.5rem;
     font-weight: 600;
+    margin-bottom: 3rem;
+}
+
+.definition-title {
+    font-size: 1.6rem;
+    color: #333;
     margin-bottom: 2rem;
+}
+
+.definition-text {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 2rem;
+    align-items: center;
+    text-align: center;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 
 /* Fun Facts Section */
@@ -75,6 +91,18 @@ main {
     margin: 0 auto;
     text-align: center;
 }
+
+#quiz {
+    margin-bottom: 3rem;
+}
+
+#quiz-question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
 
 .section-title {
     font-size: 2.5rem;
@@ -134,13 +162,47 @@ main {
     background-color: #4a9d87;
 }
 
+.btn-back {
+    display: inline-block;
+    background-color: #f44336;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-back:hover {
+    background-color: #d32f2f;
+}
+
+.btn-submit {
+    display: inline-block;
+    background-color: #56c1a0;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 3rem;
+    transition: background-color 0.3s ease;
+}
+
+.btn-submit:hover {
+    background-color: #4a9d87;
+}
+
 .body-container {
     position: relative;
     display: inline-block;
 }
 
 .body-map {
-    width: 80%; /* Adjust the width based on your image's size */
+    width: 100%; /* Adjust the width based on your image's size */
     max-width: 800px;
     border-radius: 10px;
     box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
@@ -163,9 +225,11 @@ main {
 }
 
 /* Positioning the hotspots */
-.skin { top: 30%; left: 10%; }
-.mouth { top: 40%; left: 50%; }
-.gut { top: 70%; left: 20%; }
+.skin { top: 62%; left: 5%; }
+.mouth { top: 12%; left: 60%; }
+.gut { top: 48%; left: 41%; }
+.nasal { top: 7%; left: 13%; }
+.respiratory { top: 25%; left: 32%; }
 
 /* Quick Stats Section */
 #quick-stats {
