@@ -224,6 +224,20 @@ main {
     background-color: rgba(0, 0, 0, 0.8);
 }
 
+#tooltip {
+    position: absolute;
+    background-color: #333;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 0.9rem;
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.3s;
+    pointer-events: none;
+    z-index: 1000;
+}
+
 /* Positioning the hotspots */
 .skin { top: 62%; left: 5%; }
 .mouth { top: 12%; left: 60%; }

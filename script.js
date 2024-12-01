@@ -1,3 +1,30 @@
+document.addEventListener("DOMContentLoaded", () => {
+    const hotspots = document.querySelectorAll(".hotspot");
+    const tooltip = document.getElementById("tooltip");
+
+    hotspots.forEach((hotspot) => {
+        hotspot.addEventListener("mouseenter", (event) => {
+            const info = hotspot.getAttribute("data-info");
+            tooltip.textContent = info;
+            tooltip.style.visibility = "visible";
+            tooltip.style.opacity = "1";
+            tooltip.style.top = `${event.pageY + 10}px`;
+            tooltip.style.left = `${event.pageX + 10}px`;
+        });
+
+        hotspot.addEventListener("mousemove", (event) => {
+            tooltip.style.top = `${event.pageY + 10}px`;
+            tooltip.style.left = `${event.pageX + 10}px`;
+        });
+
+        hotspot.addEventListener("mouseleave", () => {
+            tooltip.style.visibility = "hidden";
+            tooltip.style.opacity = "0";
+        });
+    });
+});
+
+
 // Question database
 const questions = [
     {
