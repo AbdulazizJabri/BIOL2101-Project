@@ -201,6 +201,42 @@ main {
     display: inline-block;
 }
 
+.info-box {
+    position: absolute;
+    top: 0;
+    left: -300px;
+    width: 250px;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: none;
+}
+
+.info-box h3 {
+    margin-top: 0;
+    font-size: 18px;
+    color: #333;
+}
+
+.info-box ul {
+    list-style: none;
+    padding: 0;
+}
+
+.info-box ul li {
+    margin: 10px 0;
+    font-size: 14px;
+}
+
+.info-box img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
 .body-map {
     width: 100%; /* Adjust the width based on your image's size */
     max-width: 800px;
@@ -213,11 +249,12 @@ main {
     position: absolute;
     font-weight: 600;
     color: white;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.6);
     padding: 0.5rem;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    border: 2px solid #ffffff;
 }
 
 .hotspot:hover {
@@ -228,7 +265,7 @@ main {
     position: absolute;
     background-color: #333;
     color: white;
-    padding: 10px;
+    padding: 10px 15px;
     border-radius: 5px;
     font-size: 0.9rem;
     visibility: hidden;
@@ -236,14 +273,28 @@ main {
     transition: opacity 0.3s;
     pointer-events: none;
     z-index: 1000;
+    max-width: 200px;
+    text-align: left;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+#tooltip ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+#tooltip ul li {
+    margin: 5px 0;
 }
 
 /* Positioning the hotspots */
+.mouth { top: 12%; left: 13%; }
+.nasal { top: 7%; left: 60%; }
+.respiratory { top: 25%; left: 31%; }
+.gut { top: 48%; left: 40%; }
 .skin { top: 62%; left: 5%; }
-.mouth { top: 12%; left: 60%; }
-.gut { top: 48%; left: 41%; }
-.nasal { top: 7%; left: 13%; }
-.respiratory { top: 25%; left: 32%; }
 
 /* Quick Stats Section */
 #quick-stats {
