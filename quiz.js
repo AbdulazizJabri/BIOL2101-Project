@@ -84,6 +84,46 @@ function submitQuiz() {
     });
 
     resultContainer.innerHTML = `You scored ${score} out of ${questions.length}!`;
+    retakeButton.style.display = 'block';
+    
+}
+
+function generateQuiz() {
+    const quizContainer = document.getElementById('quiz-questions');
+    const resultContainer = document.getElementById('quiz-result');
+    const retakeButton = document.querySelector('.btn-retake');
+
+    // Clear previous quiz
+    quizContainer.innerHTML = '';
+    resultContainer.innerHTML = '';
+    retakeButton.style.display = 'none';
+
+    // Shuffle questions and select 5 random questions
+    const shuffledQuestions = quizQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+
+    shuffledQuestions.forEach((q, index) => {
+        const questionElement = document.createElement('div');
+        questionElement.className = 'question';
+
+        const questionTitle = document.createElement('h3');
+        questionTitle.textContent = `Q${index + 1}: ${q.question}`;
+        questionElement.appendChild(questionTitle);
+
+        q.options.forEach(option => {
+            const optionLabel = document.createElement('label');
+            const optionInput = document.createElement('input');
+            optionInput.type = 'radio';
+            optionInput.name = `question${index}`;
+            optionInput.value = option;
+
+            optionLabel.appendChild(optionInput);
+            optionLabel.appendChild(document.createTextNode(option));
+            questionElement.appendChild(optionLabel);
+            questionElement.appendChild(document.createElement('br'));
+        });
+
+        quizContainer.appendChild(questionElement);
+    });
 }
 
 // Load the quiz when the page loads
