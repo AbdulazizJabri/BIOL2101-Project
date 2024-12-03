@@ -1,3 +1,4 @@
+// Tool Tip: list of microbiomes in each region
 document.addEventListener("DOMContentLoaded", () => {
     const hotspots = document.querySelectorAll(".hotspot");
     const tooltip = document.getElementById("tooltip");
@@ -91,17 +92,6 @@ document.querySelectorAll(".hotspot").forEach((hotspot) => {
             return;
         }
     
-        document.getElementById("region-title").textContent = data.title;
-    
-        const list = document.getElementById("microbiome-list");
-        list.innerHTML = ""; // Clear previous list
-    
-        data.microbes.forEach((microbe) => {
-            const listItem = document.createElement("li");
-            listItem.textContent = `${microbe.name} - ${microbe.info}`;
-            list.appendChild(listItem);
-        });
-    
         const imageContainer = document.getElementById("microbiome-image-container");
         imageContainer.innerHTML = ""; // Clear previous image
     
@@ -120,6 +110,61 @@ document.querySelectorAll(".hotspot").forEach((hotspot) => {
 
     hotspot.addEventListener("mouseleave", () => {
         document.getElementById("info-box").style.display = "none";
+    });
+});
+
+document.querySelectorAll(".hotspot").forEach((hotspot) => {
+    hotspot.addEventListener("mouseenter", (event) => {
+        const region = event.target.dataset.region;
+        const data = microbiomeData[region];
+
+        if (data) {
+            // Update the title
+            document.getElementById("region-title").textContent = data.title;
+
+            // Clear and populate the image grid with details
+            const imageContainer = document.getElementById("microbiome-image-container");
+            imageContainer.innerHTML = ""; // Clear previous images
+
+            data.microbes.forEach((microbe) => {
+                // Create a container for each microbe
+                const microbeItem = document.createElement("div");
+                microbeItem.classList.add("microbe-item");
+
+                // Add image
+                const image = document.createElement("img");
+                image.src = `${microbe.img}`;
+                image.alt = microbe.name;
+
+                // Add name
+                const name = document.createElement("div");
+                name.classList.add("microbe-name");
+                name.textContent = microbe.name;
+
+                // Add info
+                const info = document.createElement("div");
+                info.classList.add("microbe-info");
+                info.textContent = microbe.info;
+
+                // Append all to the microbe item
+                microbeItem.appendChild(image);
+                microbeItem.appendChild(name);
+                microbeItem.appendChild(info);
+
+                // Add the microbe item to the grid container
+                imageContainer.appendChild(microbeItem);
+            });
+
+            // Show the info box
+            const infoBox = document.getElementById("info-box");
+            infoBox.classList.add("visible");
+        }
+    });
+
+    hotspot.addEventListener("mouseleave", () => {
+        // Hide the info box
+        const infoBox = document.getElementById("info-box");
+        infoBox.classList.remove("visible");
     });
 });
 
