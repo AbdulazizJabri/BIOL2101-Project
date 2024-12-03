@@ -57,7 +57,15 @@ main {
     flex: 1;
 }
 
-/* Interactive Body Map Section */
+/* 
+_                   _                                       
+| |                 | |                                      
+| |__     ___     __| |  _   _     _ __ ___     __ _   _ __  
+| '_ \   / _ \   / _` | | | | |   | '_ ` _ \   / _` | | '_ \ 
+| |_) | | (_) | | (_| | | |_| |   | | | | | | | (_| | | |_) |
+|_.__/   \___/   \__,_|  \__, |   |_| |_| |_|  \__,_| | .__/ 
+                          __/ |                       | |    
+                         |___/                        |_|     */
 #body-map {
     text-align: center;
     margin-bottom: 3rem;
@@ -84,62 +92,19 @@ main {
     margin-left: 25%;
     margin-right: 25%;
 }
-
-/* Fun Facts Section */
+/* 
+   __                      __                  _         
+  / _|                    / _|                | |        
+ | |_   _   _   _ __     | |_    __ _    ___  | |_   ___ 
+ |  _| | | | | | '_ \    |  _|  / _` |  / __| | __| / __|
+ | |   | |_| | | | | |   | |   | (_| | | (__  | |_  \__ \
+ |_|    \__,_| |_| |_|   |_|    \__,_|  \___|  \__| |___/
+                                         */
 #fun-facts {
     width: 80%;
     margin: 0 auto;
     text-align: center;
 }
-
-#quiz {
-    margin-bottom: 3rem;
-}
-
-#quiz-question {
-    font-size: 1.5rem;
-    font-weight: 600;
-    margin-bottom: 1rem;
-    color: #333;
-}
-
-
-.section-title {
-    font-size: 2.5rem;
-    font-weight: 600;
-    margin-bottom: 2rem;
-    color: #333;
-}
-
-#microbiome-image-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
-    gap: 20px; /* Space between grid items */
-    margin-top: 10px;
-}
-
-.microbe-item {
-    text-align: center; /* Center align content in each grid item */
-}
-
-.microbe-item img {
-    width: 100px; /* Set the width for each image */
-    height: auto; /* Maintain aspect ratio */
-    border: 1px solid #ddd; /* Optional: border around images */
-    border-radius: 4px; /* Optional: rounded corners */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
-}
-
-.microbe-item .microbe-name {
-    font-weight: bold;
-    margin-top: 5px;
-}
-
-.microbe-item .microbe-info {
-    font-size: 0.9em;
-    color: #555; /* Subtle color for the description */
-}
-
 
 .facts-container {
     display: grid;
@@ -174,7 +139,35 @@ main {
     box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
 }
 
-/* Button Styling */
+/* 
+                  _       
+                 (_)      
+   __ _   _   _   _   ____
+  / _` | | | | | | | |_  /
+ | (_| | | |_| | | |  / / 
+  \__, |  \__,_| |_| /___|
+     | |                  
+     |_|                   */
+#quiz {
+    margin-bottom: 3rem;
+}
+
+#quiz-question {
+    font-size: 1.5rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* 
+  _               _     _                         
+ | |             | |   | |                        
+ | |__    _   _  | |_  | |_    ___    _ __    ___ 
+ | '_ \  | | | | | __| | __|  / _ \  | '_ \  / __|
+ | |_) | | |_| | | |_  | |_  | (_) | | | | | \__ \
+ |_.__/   \__,_|  \__|  \__|  \___/  |_| |_| |___/
+                                                  
+                                                   */
 .btn-test-knowledge {
     display: inline-block;
     background-color: #56c1a0;
@@ -224,6 +217,44 @@ main {
 
 .btn-submit:hover {
     background-color: #4a9d87;
+}
+
+/* 
+  _            __             _                    
+ (_)          / _|           | |                   
+  _   _ __   | |_    ___     | |__     ___   __  __
+ | | | '_ \  |  _|  / _ \    | '_ \   / _ \  \ \/ /
+ | | | | | | | |   | (_) |   | |_) | | (_) |  >  < 
+ |_| |_| |_| |_|    \___/    |_.__/   \___/  /_/\_\
+                                                   
+                                                    */
+#microbiome-image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    gap: 20px; /* Space between grid items */
+    margin-top: 10px;
+}
+
+.microbe-item {
+    text-align: center; /* Center align content in each grid item */
+}
+
+.microbe-item img {
+    width: 100px; /* Set the width for each image */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ddd; /* Optional: border around images */
+    border-radius: 4px; /* Optional: rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.microbe-item .microbe-name {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.microbe-item .microbe-info {
+    font-size: 0.9em;
+    color: #555; /* Subtle color for the description */
 }
 
 .body-container {
@@ -326,7 +357,17 @@ main {
 .gut { top: 48%; left: 40%; }
 .skin { top: 62%; left: 5%; }
 
-/* Quick Stats Section */
+
+
+                  /* _          _              _             _         
+                 (_)        | |            | |           | |        
+   __ _   _   _   _    ___  | | __    ___  | |_    __ _  | |_   ___ 
+  / _` | | | | | | |  / __| | |/ /   / __| | __|  / _` | | __| / __|
+ | (_| | | |_| | | | | (__  |   <    \__ \ | |_  | (_| | | |_  \__ \
+  \__, |  \__,_| |_|  \___| |_|\_\   |___/  \__|  \__,_|  \__| |___/
+     | |                                                            
+     |_|                                                             */
+
 #quick-stats {
     text-align: center;
     margin-bottom: 3rem;
@@ -336,6 +377,13 @@ main {
     font-size: 2rem;
     font-weight: 600;
     margin-bottom: 1.5rem;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    color: #333;
 }
 
 .stats {
@@ -364,7 +412,15 @@ main {
     color: #666;
 }
 
-/* Footer Section */
+
+   /* __                   _                 
+  / _|                 | |                
+ | |_    ___     ___   | |_    ___   _ __ 
+ |  _|  / _ \   / _ \  | __|  / _ \ | '__|
+ | |   | (_) | | (_) | | |_  |  __/ | |   
+ |_|    \___/   \___/   \__|  \___| |_|   
+                                          
+                                           */
 footer {
     background: rgba(240, 247, 252, 0.9); /* Semi-transparent background */
     padding: 1rem 0;
