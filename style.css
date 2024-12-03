@@ -235,13 +235,11 @@ _                   _
     margin-top: 10px;
 }
 
-.microbe-item {
-    text-align: center; /* Center align content in each grid item */
-}
-
 .microbe-item img {
-    width: 100px; /* Set the width for each image */
-    height: auto; /* Maintain aspect ratio */
+    width: 100px; /* Desired square width */
+    height: 100px; /* Desired square height */
+    object-fit: cover; /* Ensures the image fills the square while maintaining aspect ratio */
+    object-position: center; /* Centers the cropped portion of the image */
     border: 1px solid #ddd; /* Optional: border around images */
     border-radius: 4px; /* Optional: rounded corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
@@ -265,8 +263,8 @@ _                   _
 .info-box {
     position: absolute;
     top: 0;
-    left: -300px;
-    width: 250px;
+    left: -350px;
+    width: 300px;
     background-color: #f9f9f9;
     border: 1px solid #ddd;
     border-radius: 5px;
@@ -275,7 +273,7 @@ _                   _
     display: none;
 }
 
-.info-box h3 {
+/* .info-box h3 {
     margin-top: 0;
     font-size: 18px;
     color: #333;
@@ -289,14 +287,14 @@ _                   _
 .info-box ul li {
     margin: 10px 0;
     font-size: 14px;
-}
+} */
 
-.info-box img {
+/* .info-box img {
     max-width: 100%;
     height: auto;
     border-radius: 4px;
     margin-top: 10px;
-}
+} */
 
 .body-map {
     width: 100%; /* Adjust the width based on your image's size */
