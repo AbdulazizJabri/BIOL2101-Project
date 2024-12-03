@@ -38,46 +38,46 @@ const microbiomeData = {
     nasal: {
         title: "Nasal Microbiome",
         microbes: [
-            { name: "Staphylococcus aureus", info: "Spherical bacteria, Family: Staphylococcaceae", img: "staphylococcus aureus.jpg" },
-            { name: "Staphylococcus epidermidis", info: "Spherical bacteria, Family: Staphylococcaceae", img: "bac.png" },
-            { name: "Corynebacterium species", info: "Rod-shaped bacteria, Family: Corynebacteriaceae", img: "bac.png" },
-            { name: "Propionibacterium acnes", info: "Rod-shaped bacteria, Family: Propionibacteriaceae", img: "bac.png" },
+            { name: "Staphylococcus aureus", info: "Spherical bacteria, Family: Staphylococcaceae", img: "Staphylococcus aureus.jpg" },
+            { name: "Staphylococcus epidermidis", info: "Spherical bacteria, Family: Staphylococcaceae", img: "Staphylococcus epidermidis.jpg" },
+            { name: "Corynebacterium species", info: "Rod-shaped bacteria, Family: Corynebacteriaceae", img: "Corynebacterium species.jpg" },
+            { name: "Propionibacterium acnes", info: "Rod-shaped bacteria, Family: Propionibacteriaceae", img: "Propionibacterium acnes.jpg" },
         ],
     },
     skin: {
         title: "Skin Microbiome",
         microbes: [
-            { name: "Staphylococcus epidermidis", info: "Spherical bacteria, Family: Staphylococcaceae", img: "bac.png" },
-            { name: "Cutibacterium acnes", info: "Rod-shaped bacteria, Family: Propionibacteriaceae", img: "bac.png" },
-            { name: "Staphylococcus aureus", info: "Spherical bacteria, Family: Staphylococcaceae", img: "bac.png" },
-            { name: "Corynebacterium species", info: "Rod-shaped bacteria, Family: Corynebacteriaceae", img: "bac.png" },
+            { name: "Staphylococcus epidermidis", info: "Spherical bacteria, Family: Staphylococcaceae", img: "Staphylococcus epidermidis.jpg" },
+            { name: "Cutibacterium acnes", info: "Rod-shaped bacteria, Family: Propionibacteriaceae", img: "Cutibacterium acnes.jpg" },
+            { name: "Staphylococcus aureus", info: "Spherical bacteria, Family: Staphylococcaceae", img: "Staphylococcus aureus.jpg" },
+            { name: "Corynebacterium species", info: "Rod-shaped bacteria, Family: Corynebacteriaceae", img: "Corynebacterium species.jpg" },
         ],
     },
     mouth: {
         title: "Mouth Microbiome",
         microbes: [
-            { name: "Streptococcus mutans", info: "Spherical bacteria, Family: Streptococcaceae", img: "bac.png" },
-            { name: "Streptococcus salivarius", info: "Spherical bacteria, Family: Streptococcaceae", img: "bac.png" },
-            { name: "Fusobacterium nucleatum", info: "Rod-shaped bacteria, Family: Fusobacteriaceae", img: "bac.png" },
-            { name: "Porphyromonas gingivalis", info: "Rod-shaped bacteria, Family: Porphyromonadaceae", img: "bac.png" },
+            { name: "Streptococcus mutans", info: "Spherical bacteria, Family: Streptococcaceae", img: "Streptococcus mutans.jpg" },
+            { name: "Streptococcus salivarius", info: "Spherical bacteria, Family: Streptococcaceae", img: "Streptococcus salivarius.jpg" },
+            { name: "Fusobacterium nucleatum", info: "Rod-shaped bacteria, Family: Fusobacteriaceae", img: ".jpg" },
+            { name: "Porphyromonas gingivalis", info: "Rod-shaped bacteria, Family: Porphyromonadaceae", img: ".jpg" },
         ],
     },
     gut: {
         title: "Gut Microbiome",
         microbes: [
-            { name: "Bacteroides species", info: "Rod-shaped bacteria, Family: Bacteroidaceae", img: "bac.png" },
-            { name: "Firmicutes", info: "Rod-shaped bacteria, Family: Firmicutes", img: "bac.png" },
-            { name: "Escherichia coli", info: "Rod-shaped bacteria, Family: Enterobacteriaceae", img: "bac.png" },
-            { name: "Faecalibacterium prausnitzii", info: "Rod-shaped bacteria, Family: Ruminococcaceae", img: "bac.png" },
+            { name: "Bacteroides species", info: "Rod-shaped bacteria, Family: Bacteroidaceae", img: ".jpg" },
+            { name: "Firmicutes", info: "Rod-shaped bacteria, Family: Firmicutes", img: ".jpg" },
+            { name: "Escherichia coli", info: "Rod-shaped bacteria, Family: Enterobacteriaceae", img: ".jpg" },
+            { name: "Faecalibacterium prausnitzii", info: "Rod-shaped bacteria, Family: Ruminococcaceae", img: ".jpg" },
         ],
     },
     respiratory: {
         title: "Respiratory Microbiome",
         microbes: [
-            { name: "Staphylococcus species", info: "Spherical bacteria, Family: Staphylococcaceae", img: "bac.png" },
-            { name: "Corynebacterium species", info: "Rod-shaped bacteria, Family: Corynebacteriaceae", img: "bac.png" },
-            { name: "Moraxella species", info: "Rod-shaped bacteria, Family: Moraxellaceae", img: "bac.png" },
-            { name: "Haemophilus influenzae", info: "Rod-shaped bacteria, Family: Pasteurellaceae", img: "bac.png" },
+            { name: "Staphylococcus species", info: "Spherical bacteria, Family: Staphylococcaceae", img: ".jpg" },
+            { name: "Corynebacterium species", info: "Rod-shaped bacteria, Family: Corynebacteriaceae", img: ".jpg" },
+            { name: "Moraxella species", info: "Rod-shaped bacteria, Family: Moraxellaceae", img: ".jpg" },
+            { name: "Haemophilus influenzae", info: "Rod-shaped bacteria, Family: Pasteurellaceae", img: ".jpg" },
         ]
     }
 };
