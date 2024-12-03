@@ -111,6 +111,36 @@ main {
     color: #333;
 }
 
+#microbiome-image-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns per row */
+    gap: 20px; /* Space between grid items */
+    margin-top: 10px;
+}
+
+.microbe-item {
+    text-align: center; /* Center align content in each grid item */
+}
+
+.microbe-item img {
+    width: 100px; /* Set the width for each image */
+    height: auto; /* Maintain aspect ratio */
+    border: 1px solid #ddd; /* Optional: border around images */
+    border-radius: 4px; /* Optional: rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow */
+}
+
+.microbe-item .microbe-name {
+    font-weight: bold;
+    margin-top: 5px;
+}
+
+.microbe-item .microbe-info {
+    font-size: 0.9em;
+    color: #555; /* Subtle color for the description */
+}
+
+
 .facts-container {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
