@@ -7,44 +7,40 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <style>
-.feedback {
-        margin-left: 10px;
-        font-weight: bold;
-    }
-    label {
-        display: block;
-        margin: 5px 0;
-    }
-    label input {
-        margin-right: 10px;
+    .feedback {
+            margin-left: 10px;
+            font-weight: bold;
+        }
+        label {
+            display: block;
+            margin: 5px 0;
+        }
+        label input {
+            margin-right: 10px;
+        }
+
+    /* Style for the retake button */
+    .btn-retake, .btn-submit {
+        display: inline-block;
+        padding: 10px 20px;
+        margin: 20px 0;
+        font-size: 16px;
+        color: #fff;
+        background-color: #28a745; /* Green background */
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        text-align: center;
+        text-decoration: none;
+        transition: background-color 0.3s ease, transform 0.3s ease;
     }
 
-/* Style for the retake button */
-.btn-retake, .btn-submit {
-    display: inline-block;
-    padding: 10px 20px;
-    margin: 20px 0;
-    font-size: 16px;
-    color: #fff;
-    background-color: #28a745; /* Green background */
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    text-align: center;
-    text-decoration: none;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-}
-
-.btn-retake:hover {
-    background-color: #218838; /* Darker green on hover */
-    transform
-}
+    .btn-retake:hover {
+        background-color: #218838; /* Darker green on hover */
+        transform: scale(1.05);
+    }
 </style>
    
-
-
-
-
 <body>
 
     <!-- Header Section -->
@@ -53,8 +49,8 @@
         <nav>
             <a href="index.html">Home</a>
             <a href="fun-facts.html">Fun Facts</a>
-            <a href="videos.html">Videos</a>
             <a href="quiz.html">Quiz</a>
+            <a href="videos.html">Videos</a>
             <a href="about.html">About</a>
         </nav>
     </header>
@@ -86,39 +82,41 @@
 </html>
 
 
-// // Question database
-// const questions = [
-//     {
-//         question: "What is the microbiome?",
-//         options: [
-//             "A collection of all microbes living in an environment",
-//             "A single type of bacteria in the gut",
-//             "Viruses that infect the body",
-//             "The immune system's response to infection",
-//         ],
-//         answer: 0,
-//     },
-//     {
-//         question: "Which vitamin is produced by gut bacteria?",
-//         options: ["Vitamin A", "Vitamin D", "Vitamin K", "Vitamin B12"],
-//         answer: 2,
-//     },
-//     {
-//         question: "True or False: Skin has a microbiome.",
-//         options: ["True", "False"],
-//         answer: 0,
-//     },
-//     {
-//         question: "Name one food that promotes a healthy microbiome.",
-//         options: ["Candy", "Fermented foods", "Fried foods", "Processed foods"],
-//         answer: 1,
-//     },
-//     {
-//         question: "What is a probiotic?",
-//         options: [
-//             "A type of medicine",
-//             "Live microorganisms that promote gut health",
-//             "A disease caused by bacteria",
-//             "An antibiotic treatment",
-//         ],
-//         answer: 1,
+<!-- const questions = [
+    {
+        question: "What is the microbiome?",
+        options: [
+            "A collection of all microbes living in an environment",
+            "A single type of bacteria in the gut",
+            "Viruses that infect the body",
+            "The immune system's response to infection",
+        ],
+        answer: 0,
+    },
+    {
+        question: "Which vitamin is produced by gut bacteria?",
+        options: ["Vitamin A", "Vitamin D", "Vitamin K", "Vitamin B12"],
+        answer: 2,
+    },
+    {
+        question: "True or False: Skin has a microbiome.",
+        options: ["True", "False"],
+        answer: 0,
+    },
+    {
+        question: "Name one food that promotes a healthy microbiome.",
+        options: ["Candy", "Fermented foods", "Fried foods", "Processed foods"],
+        answer: 1,
+    },
+    {
+        question: "What is a probiotic?",
+        options: [
+            "A type of medicine",
+            "Live microorganisms that promote gut health",
+            "A disease caused by bacteria",
+            "An antibiotic treatment",
+        ],
+        answer: 1,
+    },
+    // Add more questions here
+]; -->
