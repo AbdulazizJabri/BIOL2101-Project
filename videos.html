@@ -1,56 +1,104 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Microbiome Explorer - Videos</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
-        /* Ensure videos are stacked vertically and centered */
-        .video-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px; 
-        }
-        .video-container iframe {
-            width: 190%;
-            max-width: 560px;
-            height: 315px;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Videos - Microbiome Explorer</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Header Section -->
-    <header>
-        <div class="logo">Microbiome Explorer</div>
-        <nav>
-            <a href="index.html">Home</a>
-            <a href="fun-facts.html">Fun Facts</a>
-            <a href="quiz.html">Quiz</a>
-            <a href="videos.html">Videos</a>
-            <a href="about.html">About</a>
-        </nav>
-    </header>
+  <header>
+    <div class="logo">Microbiome Explorer</div>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="fun-facts.html">Fun Facts</a>
+      <a href="quiz.html">Quiz</a>
+      <a href="videos.html">Videos</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
 
-    <!-- Main Content Section -->
-    <main>
-        <section id="videos">
-            <h1>Microbiome Educational Videos</h1>
-            <div class="video-container">
-                <iframe src="https://www.youtube.com/embed/VzPD009qTN4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/JYRkXhT1XEs" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                <iframe src="https://www.youtube.com/embed/Ybk7E7SLbWw" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </section>
-    </main>
+  <main>
+    <section id="featured-videos">
+      <h1>Featured Microbiome Videos</h1>
+      <div class="video-grid">
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="thumbnails/1.jpg" alt="Video Thumbnail">
+            <button class="play-button">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          <div class="video-info">
+            <h3>Introduction to the Human Microbiome</h3>
+            <p>Explore the fascinating world of the trillions of microorganisms that call our bodies home.</p>
+            <a href="https://youtu.be/VzPD009qTN4?si=hLjliJ9CjDKYZEVO" class="watch-button">Watch Now</a>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="thumbnails/2.jpg" alt="Video Thumbnail">
+            <button class="play-button">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          <div class="video-info">
+            <h3>The Gut Microbiome and Digestive Health</h3>
+            <p>Learn how the gut microbiome plays a crucial role in maintaining a healthy digestive system.</p>
+            <a href="https://youtu.be/AsyzqhFKLoI?si=a2BXREqcs4z4EDzF" class="watch-button">Watch Now</a>
+          </div>
+        </div>
+        <div class="video-card">
+          <div class="video-thumbnail">
+            <img src="thumbnails/3.jpg" alt="Video Thumbnail">
+            <button class="play-button">
+              <i class="fas fa-play"></i>
+            </button>
+          </div>
+          <div class="video-info">
+            <h3>What Your Microbiome Does For Your Body</h3>
+            <p>Discover the important functions that the microbiome performs to keep you healthy.</p>
+            <a href="https://youtu.be/Ybk7E7SLbWw?si=l4oIWhy9E-on2dXc" class="watch-button">Watch Now</a>
+          </div>   
+      </div>
+    </section>
 
-    <!-- Footer Section -->
-    <footer>
-        <p>&copy; 2024 Microbiome Explorer. All rights reserved.</p>
-    </footer>
+    <section id="video-categories">
+      <h2>Explore Videos by Category</h2>
+      <div class="category-grid">
+        <a href="#" class="category-card">
+          <div class="category-thumbnail">
+            <img src="category-gut.jpg" alt="Gut Microbiome">
+          </div>
+          <h3>Gut Microbiome</h3>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-thumbnail">
+            <img src="category-skin.jpg" alt="Skin Microbiome">
+          </div>
+          <h3>Skin Microbiome</h3>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-thumbnail">
+            <img src="category-oral.jpg" alt="Oral Microbiome">
+          </div>
+          <h3>Oral Microbiome</h3>
+        </a>
+        <a href="#" class="category-card">
+          <div class="category-thumbnail">
+            <img src="category-respiratory.jpg" alt="Respiratory Microbiome">
+          </div>
+          <h3>Respiratory Microbiome</h3>
+        </a>
+        <!-- Add more category cards as needed -->
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Microbiome Explorer. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
