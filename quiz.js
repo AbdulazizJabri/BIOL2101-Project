@@ -132,78 +132,133 @@ const quizQuestions = [
     }
 ];
 
-function generateQuiz() {
-    const quizContainer = document.getElementById('quiz-questions');
-    const resultContainer = document.getElementById('quiz-result');
-    const retakeButton = document.querySelector('.btn-retake');
+class Quiz {
+    constructor(questions) {
+        this.questions = this.shuffleQuestions(questions);
+        this.currentQuestionIndex = 0;
+        this.score = 0;
+        this.answered = false;
+        this.questionsToShow = 5; // Number of questions per quiz
+        
+        // Get DOM elements
+        this.questionText = document.getElementById('question-text');
+        this.optionsContainer = document.getElementById('options-container');
+        this.nextButton = document.getElementById('next-button');
+        this.retakeButton = document.getElementById('retake-button');
+        this.questionCounter = document.getElementById('question-counter');
+        this.progressFill = document.getElementById('progress-fill');
+        this.resultsSection = document.getElementById('results-section');
+        this.questionSection = document.getElementById('question-section');
+        
+        // Initialize quiz
+        this.initializeQuiz();
+    }
 
-    // Clear previous quiz
-    quizContainer.innerHTML = '';
-    resultContainer.innerHTML = '';
-    retakeButton.style.display = 'none';
+    shuffleQuestions(questions) {
+        return [...questions].sort(() => Math.random() - 0.5);
+    }
 
-    // Shuffle questions and select 5 random questions
-    const shuffledQuestions = quizQuestions.sort(() => 0.5 - Math.random()).slice(0, 5);
+    initializeQuiz() {
+        this.questions = this.questions.slice(0, this.questionsToShow);
+        this.displayQuestion();
+        this.updateProgress();
+        
+        this.nextButton.addEventListener('click', () => this.handleNext());
+        this.retakeButton.addEventListener('click', () => this.retakeQuiz());
+    }
 
-    shuffledQuestions.forEach((q, index) => {
-        const questionElement = document.createElement('div');
-        questionElement.className = 'question';
-
-        const questionTitle = document.createElement('h3');
-        questionTitle.textContent = `Q${index + 1}: ${q.question}`;
-        questionElement.appendChild(questionTitle);
-
-        q.options.forEach(option => {
-            const optionLabel = document.createElement('label');
-            const optionInput = document.createElement('input');
-            optionInput.type = 'radio';
-            optionInput.name = `question${index}`;
-            optionInput.value = option;
-
-            optionLabel.appendChild(optionInput);
-            optionLabel.appendChild(document.createTextNode(option));
-            questionElement.appendChild(optionLabel);
-            questionElement.appendChild(document.createElement('br'));
+    displayQuestion() {
+        const question = this.questions[this.currentQuestionIndex];
+        this.questionText.textContent = question.question;
+        this.optionsContainer.innerHTML = '';
+        
+        question.options.forEach(option => {
+            const button = document.createElement('button');
+            button.className = 'option-button';
+            button.textContent = option;
+            button.addEventListener('click', () => this.handleAnswer(option));
+            this.optionsContainer.appendChild(button);
         });
 
-        quizContainer.appendChild(questionElement);
-    });
-}
+        this.questionCounter.textContent = `Question ${this.currentQuestionIndex + 1} of ${this.questionsToShow}`;
+        this.answered = false;
+        this.nextButton.disabled = true;
+    }
 
-function submitQuiz() {
-    const quizContainer = document.getElementById('quiz-questions');
-    const resultContainer = document.getElementById('quiz-result');
-    const retakeButton = document.querySelector('.btn-retake');
-    let score = 0;
+    handleAnswer(selectedOption) {
+        if (this.answered) return;
+        
+        const question = this.questions[this.currentQuestionIndex];
+        const correct = selectedOption === question.answer;
+        this.answered = true;
+        
+        if (correct) this.score++;
 
-    // Get all questions and their answers
-    const questions = document.querySelectorAll('.question');
-    questions.forEach((questionElement, index) => {
-        const selectedAnswer = questionElement.querySelector('input[type="radio"]:checked');
-        const correctAnswer = quizQuestions.find(q => q.question === questionElement.querySelector('h3').textContent.slice(4)).answer;
-
-        if (selectedAnswer) {
-            if (selectedAnswer.value === correctAnswer) {
-                score++;
-                selectedAnswer.parentElement.style.backgroundColor = 'lightgreen'; // Highlight correct answer in green
-            } else {
-                selectedAnswer.parentElement.style.backgroundColor = 'lightcoral'; // Highlight wrong answer in red
-                // Highlight the correct answer in green
-                const correctOption = [...questionElement.querySelectorAll('input[type="radio"]')].find(input => input.value === correctAnswer);
-                correctOption.parentElement.style.backgroundColor = 'lightgreen';
+        // Update UI to show correct/incorrect answers
+        const buttons = this.optionsContainer.querySelectorAll('.option-button');
+        buttons.forEach(button => {
+            button.disabled = true;
+            if (button.textContent === question.answer) {
+                button.classList.add('correct');
+            } else if (button.textContent === selectedOption && !correct) {
+                button.classList.add('incorrect');
             }
-        } else {
-            // If no answer was selected, highlight the correct answer in green
-            const correctOption = [...questionElement.querySelectorAll('input[type="radio"]')].find(input => input.value === correctAnswer);
-            correctOption.parentElement.style.backgroundColor = 'lightgreen';
-        }
-    });
+        });
 
-    // Display result
-    resultContainer.innerHTML = `<h2>Your Score: ${score} / 5</h2>`;
-    retakeButton.style.display = 'block'; // Show the retake button
+        this.nextButton.disabled = false;
+    }
+
+    handleNext() {
+        if (this.currentQuestionIndex < this.questions.length - 1) {
+            this.currentQuestionIndex++;
+            this.displayQuestion();
+        } else {
+            this.showResults();
+        }
+        this.updateProgress();
+    }
+
+    updateProgress() {
+        const progress = ((this.currentQuestionIndex) / this.questions.length) * 100;
+        this.progressFill.style.width = `${progress}%`;
+    }
+
+    showResults() {
+        this.questionSection.classList.add('hidden');
+        this.resultsSection.classList.remove('hidden');
+        this.nextButton.classList.add('hidden');
+        this.retakeButton.classList.remove('hidden');
+
+        const scoreDisplay = document.getElementById('score-display');
+        const resultsMessage = document.getElementById('results-message');
+        
+        scoreDisplay.textContent = `${this.score}/${this.questionsToShow}`;
+        
+        if (this.score === this.questionsToShow) {
+            resultsMessage.textContent = "Perfect score! You're a microbiome expert!";
+        } else if (this.score > this.questionsToShow / 2) {
+            resultsMessage.textContent = "Great job! Keep learning about the microbiome!";
+        } else {
+            resultsMessage.textContent = "Keep studying! There's more to learn about the microbiome!";
+        }
+    }
+
+    retakeQuiz() {
+        this.currentQuestionIndex = 0;
+        this.score = 0;
+        this.questions = this.shuffleQuestions(quizQuestions).slice(0, this.questionsToShow);
+        
+        this.questionSection.classList.remove('hidden');
+        this.resultsSection.classList.add('hidden');
+        this.nextButton.classList.remove('hidden');
+        this.retakeButton.classList.add('hidden');
+        
+        this.displayQuestion();
+        this.updateProgress();
+    }
 }
 
-
-// Initialize the quiz on page load
-document.addEventListener('DOMContentLoaded', generateQuiz);
+// Initialize quiz when the page loads
+document.addEventListener('DOMContentLoaded', () => {
+    const quiz = new Quiz(quizQuestions);
+});

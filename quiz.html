@@ -5,45 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microbiome Explorer - Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
-<style>
-    .feedback {
-            margin-left: 10px;
-            font-weight: bold;
-        }
-        label {
-            display: block;
-            margin: 5px 0;
-        }
-        label input {
-            margin-right: 10px;
-        }
-
-    /* Style for the retake button */
-    .btn-retake, .btn-submit {
-        display: inline-block;
-        padding: 10px 20px;
-        margin: 20px 0;
-        font-size: 16px;
-        color: #fff;
-        background-color: #28a745; /* Green background */
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        text-align: center;
-        text-decoration: none;
-        transition: background-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .btn-retake:hover {
-        background-color: #218838; /* Darker green on hover */
-        transform: scale(1.05);
-    }
-</style>
-   
-<body>
-
-    <!-- Header Section -->
+<body class="quiz-page">
     <header>
         <div class="logo">Microbiome Explorer</div>
         <nav>
@@ -55,68 +19,55 @@
         </nav>
     </header>
 
-    <!-- Main Content Section -->
     <main>
-        <section id="quiz">
-            <h1>Test Your Microbiome Knowledge!</h1>
+        <div class="quiz-container">
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Microbiome Quiz</h1>
+                    <p class="quiz-subtitle" id="question-counter">Question 1 of 5</p>
+                </div>
 
-            <div id="quiz-questions"></div>
+                <div class="quiz-content">
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
 
-            <button class="btn-submit" onclick="submitQuiz()">Submit</button>
+                    <!-- Question Section -->
+                    <div id="question-section">
+                        <h2 class="question-text" id="question-text">Loading question...</h2>
+                        <div class="options-grid" id="options-container">
+                            <!-- Options will be inserted here by JavaScript -->
+                        </div>
+                    </div>
 
-            <div id="quiz-result"></div>
+                    <!-- Results Section (hidden by default) -->
+                    <div id="results-section" class="results-section hidden">
+                        <div class="trophy-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h2 class="results-title">Your Score: <span id="score-display">0/5</span></h2>
+                        <p class="results-message" id="results-message"></p>
+                    </div>
+                </div>
 
-            <button class="btn-retake" onclick="generateQuiz()" style="display:none;">Take Quiz Again</button>
-
-            <a href="index.html" class="btn-back">Back to the Map</a>
-        </section>
+                <div class="quiz-footer">
+                    <button class="btn btn-outline" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                    <button class="btn btn-primary" id="next-button" disabled>Next Question</button>
+                    <button class="btn btn-primary hidden" id="retake-button">
+                        <i class="fas fa-redo"></i> Retake Quiz
+                    </button>
+                </div>
+            </div>
+        </div>
     </main>
-    
-    <!-- Footer Section -->
+
     <footer>
         <p>&copy; 2024 Microbiome Explorer. All rights reserved.</p>
     </footer>
-    
+
     <script src="quiz.js"></script>
 </body>
 </html>
-
-
-<!-- const questions = [
-    {
-        question: "What is the microbiome?",
-        options: [
-            "A collection of all microbes living in an environment",
-            "A single type of bacteria in the gut",
-            "Viruses that infect the body",
-            "The immune system's response to infection",
-        ],
-        answer: 0,
-    },
-    {
-        question: "Which vitamin is produced by gut bacteria?",
-        options: ["Vitamin A", "Vitamin D", "Vitamin K", "Vitamin B12"],
-        answer: 2,
-    },
-    {
-        question: "True or False: Skin has a microbiome.",
-        options: ["True", "False"],
-        answer: 0,
-    },
-    {
-        question: "Name one food that promotes a healthy microbiome.",
-        options: ["Candy", "Fermented foods", "Fried foods", "Processed foods"],
-        answer: 1,
-    },
-    {
-        question: "What is a probiotic?",
-        options: [
-            "A type of medicine",
-            "Live microorganisms that promote gut health",
-            "A disease caused by bacteria",
-            "An antibiotic treatment",
-        ],
-        answer: 1,
-    },
-    // Add more questions here
-]; -->
