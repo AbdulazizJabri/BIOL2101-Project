@@ -1017,12 +1017,6 @@ footer p {
         padding: 0 1rem;
     }
 
-    .fact-card {
-        width: 100%;
-        margin: 0;
-        padding: 1.5rem;
-    }
-
     .fact-card h3 {
         font-size: 1.3rem;
     }
@@ -1073,6 +1067,11 @@ footer p {
     .category-thumbnail {
         padding-top: 56.25%; /* 16:9 aspect ratio */
     }
+
+    .definition-text {
+        margin-left: 3%;
+        margin-right: 3%;
+    }
 }
 
 /* Common improvements for all pages */
@@ -1089,7 +1088,7 @@ footer p {
     h2 {
         font-size: 1.5rem;
         margin-bottom: 1rem;
-    }
+    } 
 }
 
 /* Medium screens (tablets) */
