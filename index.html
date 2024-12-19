@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microbiome Explorer</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
 <body>
 
@@ -16,7 +17,9 @@
             <a href="index.html">Home</a>
             <a href="fun-facts.html">Fun Facts</a>
             <a href="quiz.html">Quiz</a>
+            <a href="videos.html">Videos</a>
             <a href="about.html">About</a>
+           
         </nav>
     </header>
 
@@ -53,20 +56,21 @@
         
         <!-- Quick Stats Section -->
         <section id="quick-stats">
-            <div class="stats">
-                <div class="stat-item">
-                    <h3>1000+</h3>
+            <div class="counter">
+                <div class="counter-box">
+                    <h2 id="species-count">0</h2>
                     <p>Species in the Gut</p>
                 </div>
-                <div class="stat-item">
-                    <h3>500 Trillion</h3>
+                <div class="counter-box">
+                    <h2 id="microbes-count">0</h2>
                     <p>Microbes in Your Body</p>
                 </div>
-                <div class="stat-item">
-                    <h3>70%</h3>
+                <div class="counter-box">
+                    <h2 id="immunity-count">0%</h2>
                     <p>Immunity from Gut Health</p>
                 </div>
             </div>
+            <script src="counter.js"></script>
         </section>
 
         <a href="fun-facts.html" class="btn-test-knowledge">Want to Learn Some Fun Facts?</a>

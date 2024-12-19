@@ -5,128 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Microbiome Explorer - Quiz</title>
     <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.png">
 </head>
-<body>
-
-    <!-- Header Section -->
+<body class="quiz-page">
     <header>
         <div class="logo">Microbiome Explorer</div>
         <nav>
             <a href="index.html">Home</a>
             <a href="fun-facts.html">Fun Facts</a>
             <a href="quiz.html">Quiz</a>
+            <a href="videos.html">Videos</a>
             <a href="about.html">About</a>
         </nav>
     </header>
 
-    <!-- Main Content Section -->
     <main>
-        <section id="quiz">
-            <h1>Test Your Microbiome Knowledge!</h1>
+        <div class="quiz-container">
+            <div class="quiz-card">
+                <div class="quiz-header">
+                    <h1 class="quiz-title">Microbiome Quiz</h1>
+                    <p class="quiz-subtitle" id="question-counter">Question 1 of 5</p>
+                </div>
 
-            <div id="quiz-questions"></div>
+                <div class="quiz-content">
+                    <!-- Progress Bar -->
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
 
-            <button class="btn-submit
-            " onclick="submitQuiz()">Submit</button>
+                    <!-- Question Section -->
+                    <div id="question-section">
+                        <h2 class="question-text" id="question-text">Loading question...</h2>
+                        <div class="options-grid" id="options-container">
+                            <!-- Options will be inserted here by JavaScript -->
+                        </div>
+                    </div>
 
+                    <!-- Results Section (hidden by default) -->
+                    <div id="results-section" class="results-section hidden">
+                        <div class="trophy-icon">
+                            <i class="fas fa-trophy"></i>
+                        </div>
+                        <h2 class="results-title">Your Score: <span id="score-display">0/5</span></h2>
+                        <p class="results-message" id="results-message"></p>
+                    </div>
+                </div>
 
-            <div id="quiz-result"></div>
-        
-
-
-            <!-- <form id="quiz-form">
-                <div class="quiz-question">
-                    <label for="question1">How many bacteria are in the human body?</label>
-                    <select id="question1">
-                        <option value="1">1 billion</option>
-                        <option value="2">39 trillion</option>
-                        <option value="3">100 trillion</option>
-                    </select>
+                <div class="quiz-footer">
+                    <button class="btn btn-outline" onclick="window.location.href='index.html'">
+                        <i class="fas fa-home"></i> Home
+                    </button>
+                    <button class="btn btn-primary" id="next-button" disabled>Next Question</button>
+                    <button class="btn btn-primary hidden" id="retake-button">
+                        <i class="fas fa-redo"></i> Retake Quiz
+                    </button>
                 </div>
-                <div class="quiz-question">
-                    <label for="question2">Which part of the body hosts the most bacteria?</label>
-                    <select id="question2">
-                        <option value="1">Mouth</option>
-                        <option value="2">Skin</option>
-                        <option value="3">Gut</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question3">What is the role of the microbiome in the gut?</label>
-                    <select id="question3">
-                        <option value="1">Digestion</option>
-                        <option value="2">Immunity</option>
-                        <option value="3">Both</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question4">What can disrupt the skin microbiome?</label>
-                    <select id="question4">
-                        <option value="1">Moisturizer</option>
-                        <option value="2">Antibiotics</option>
-                        <option value="3">Sunscreen</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question5">What is the best way to maintain a healthy microbiome?</label>
-                    <select id="question5">
-                        <option value="1">Avoid all bacteria</option>
-                        <option value="2">Eat a diverse diet</option>
-                        <option value="3">Use antibacterial soap</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question6">What is the main function of the oral microbiome?</label>
-                    <select id="question6">
-                        <option value="1">Digestion</option>
-                        <option value="2">Breathing</option>
-                        <option value="3">Protection</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question7">What is the connection between the gut microbiome and the brain?</label>
-                    <select id="question7">
-                        <option value="1">No connection</option>
-                        <option value="2">One-way connection</option>
-                        <option value="3">Two-way connection</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question8">What is the role of the microbiome in the immune system?</label>
-                    <select id="question8">
-                        <option value="1">No role</option>
-                        <option value="2">Supports immune system</option>
-                        <option value="3">Weakens immune system</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question9">What is the best way to improve gut health?</label>
-                    <select id="question9">
-                        <option value="1">Avoid all bacteria</option>
-                        <option value="2">Eat a high-sugar diet</option>
-                        <option value="3">Eat a high-fiber diet</option>
-                    </select>
-                </div>
-                <div class="quiz-question">
-                    <label for="question10">What is the main function of the gut microbiome?</label>
-                    <select id="question10">
-                        <option value="1">Digestion</option>
-                        <option value="2">Breathing</option>
-                        <option value="3">Protection</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">Submit</button>
-            </form>
-            <div id="quiz-result"></div> -->
-            <a href="index.html" class="btn-back">Back to the Map</a>
-        </section>
+            </div>
+        </div>
     </main>
-    
-    <!-- Footer Section -->
+
     <footer>
         <p>&copy; 2024 Microbiome Explorer. All rights reserved.</p>
     </footer>
-    
-    <script src="script.js"></script>
+
+    <script src="quiz.js"></script>
 </body>
 </html>
