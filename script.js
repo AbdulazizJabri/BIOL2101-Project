@@ -251,3 +251,16 @@ document.querySelectorAll(".hotspot").forEach((hotspot) => {
         infoBox.classList.remove("visible");
     });
 });
+
+window.addEventListener("resize", () => {
+    const bodyContainer = document.querySelector(".body-container");
+    const infoBox = document.getElementById("info-box");
+
+    if (window.innerWidth < 600) {
+        infoBox.style.position = "static";
+        bodyContainer.style.flexDirection = "column";
+    } else {
+        infoBox.style.position = "absolute";
+        bodyContainer.style.flexDirection = "row";
+    }
+});
