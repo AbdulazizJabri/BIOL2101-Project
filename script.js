@@ -253,14 +253,14 @@ document.querySelectorAll(".hotspot").forEach((hotspot) => {
 });
 
 window.addEventListener("resize", () => {
-    const bodyContainer = document.querySelector(".body-container");
     const infoBox = document.getElementById("info-box");
 
     if (window.innerWidth < 600) {
         infoBox.style.position = "static";
-        bodyContainer.style.flexDirection = "column";
+        infoBox.style.marginTop = "20px"; // Add some space between map and info box
     } else {
         infoBox.style.position = "absolute";
-        bodyContainer.style.flexDirection = "row";
+        infoBox.style.marginTop = "0";
+        infoBox.style.width = "300px"; // Reset to original width
     }
 });
